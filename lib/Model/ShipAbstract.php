@@ -2,17 +2,18 @@
 
 namespace lib\Model;
 
-
 abstract class ShipAbstract
 {
-	public abstract function getValues();
 
-	public abstract function showCurrentValues();
+    public abstract function getKeyValues();
 
-	public function running()
-	{
-		echo "This abstract is running!<br/>\n";
-	}
+    public abstract function showCurrentValues();
 
+    public abstract function shipIt( $vehicle );
+
+    public function running()
+    {
+        echo "This abstract is running!<br/>\n";
+    }
 
 }
