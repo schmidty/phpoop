@@ -1,6 +1,6 @@
 <?php
 
-namespace lib\Model;
+namespace lib\Module;
 
 abstract class ShipAbstract
 {

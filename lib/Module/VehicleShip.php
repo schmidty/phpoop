@@ -1,6 +1,6 @@
 <?php
 
-namespace lib\Model;
+namespace lib\Module;
 
 use src\Classes\ShipInterface;
 
@@ -57,7 +57,7 @@ class VehicleShip extends ShipAbstract implements ShipInterface
 
     /**
      * You must have the "signature" or "interface name" preceding the $value variable
-     * @param \lib\Model\Float $value
+     * @param \lib\Module\Float $value
      * @param type $vehicle
      */
     public function setValue( Float $value, $vehicle )

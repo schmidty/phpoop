@@ -8,7 +8,7 @@
 require_once 'autoload.php';
 
 try {
-    $reb = new lib\Model\VehicleShip(null);
+    $reb = new lib\Module\VehicleShip(null);
     $reb->showCurrentValues();
 
     $reb->setValue(15.00, 'pinto', 15);

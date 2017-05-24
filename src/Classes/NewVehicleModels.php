@@ -2,7 +2,7 @@
 
 namespace src\Classes;
 
-use lib\Model\VehicleShip;
+use lib\Module\VehicleShip;
 use src\Classes\ClassContants;
 
 class NewVehicleModels
@@ -19,6 +19,8 @@ class NewVehicleModels
     public function __construct()
     {
         $this->raptors = [ 'raptor' => 68000.59 ];
+
+        echo "The NewVehicleModels class is running! <br/>\n";
     }
 
     /**
