@@ -1,5 +1,8 @@
 <?php
 
+use lib\Module\VehicleShip;
+use src\Classes\NewVehicleModels;
+
 /**
  * To easily run this use PHP built-in server and use that URL
  *
@@ -8,7 +11,7 @@
 require_once 'autoload.php';
 
 try {
-    $reb = new lib\Module\VehicleShip(null);
+    $reb = new VehicleShip(null);
     $reb->showCurrentValues();
 
     $reb->setValue(15.00, 'pinto', 15);
@@ -24,8 +27,15 @@ try {
     $reb->shipIt('pinto');
 
     // We have a new vehicle order!
-    $newCar = new src\Classes\NewVehicleModels();
+    $newCar = new NewVehicleModels();
     $newCar->shipNewVehicleModelRaptor();
+
+    // New car to ship
+    $sv = new stdClass();
+    $sv->{'Explorer'} = 46000.00;
+
+    $ship = new VehicleShip($sv);
+    $ship->shipIt('Explorer');
 
 } catch (Exception $ex) {
     echo "Error: ". $ex->getMessage();

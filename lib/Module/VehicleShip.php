@@ -19,24 +19,16 @@ class VehicleShip extends ShipAbstract implements ShipInterface
      */
     protected $values;
 
-    /**
-     * @var type array
-     */
-    protected $newModels;
-
 
     /**
-     * @param type $newModels
+     * @param object $costDetails
      */
-    public function __construct( $newModels = null )
+    public function __construct( $costDetails = null )
     {
         // Dependency Injection
-        if( !empty( $newModels ) ) {
-            $this->newModels = $newModels;
-        }
+        $this->values = $costDetails;
 
         $this->running();
-        //$this->setValue( 65500.00, 'raptor' );
     }
 
     /**
@@ -44,15 +36,7 @@ class VehicleShip extends ShipAbstract implements ShipInterface
      */
     public function getKeyValues()
     {
-        return $this->values;
-    }
-
-    /**
-     * @return type array
-     */
-    public function getNewModels()
-    {
-        return $this->newModels;
+        return (array) $this->values;
     }
 
     /**
@@ -98,10 +82,10 @@ class VehicleShip extends ShipAbstract implements ShipInterface
     {
         $keyValues = $this->getKeyValues();
 
-        if( array_key_exists( $vehicle, $keyValues ) ) {
-            $total = (int) $keyValues[ $vehicle ] + 2000;
-            echo "Sending out " . $vehicle . " and applying a $2000.00 shipping fee...<br/>\n";
-        echo "The total + fee will be $". number_format($total, 2) ."<br/>\n";
+        if( $keyValues && array_key_exists( $vehicle, $keyValues ) ) {
+            $total = (int) $keyValues[ $vehicle ] + 2000; // Add shipping costs
+            echo "<br/>\nSending out " . $vehicle . " and applying a $2000.00 shipping fee...<br/>\n";
+            echo "The total plus fee will be $". number_format($total, 2) ."<br/>\n";
         } else {
             echo "Vehicle not found.<br/>\n";
         }
