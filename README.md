@@ -1,9 +1,10 @@
 ## PHP OOP Abstract, Interface Examples
 
-* To run this:  php -S localhost:8000
+* To run this from the command-line in root of directory:  php -S localhost:8000
 * In browser go to url:  http://localhost:8000
 
 #### Goals:
+* kept it really simple for my understanding
 * Wrote my own quick little autoloader based on reading the http://php.net/manual/en/function.spl-autoload-register.php 
 	* I included a quick check script should a question of whether the classes were loaded or not?
     * To use this in browser go to url:  http://localhost:8000/autoload.test.php
